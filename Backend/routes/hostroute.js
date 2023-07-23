@@ -11,7 +11,7 @@ require("dotenv").config();
 hostrouter.post('/register', async (req, res) => {
   
     const { name, password,email, hostStatus, location, propertyType, about, hostingSince } = req.body;
-    console.log(req.body)
+    // console.log(req.body)
     let find_email=await Host.find({email});
     if(find_email.length>0){
         return res.json({msg:"Email Already Exists"})
@@ -47,7 +47,7 @@ hostrouter.post('/login', async (req, res) => {
           if (result) {
             const token = jwt.sign({ userID: user_data[0]._id }, process.env.key);
             // console.log(token);
-            res.status(201).json({"msg":"User Successfully LoggedIn","token":token});
+            res.status(201).json({"msg":"User Successfully LoggedIn","token":token,"userID": user_data[0]._id});
           } else {
             res.json({ msg: "Wrong Credentials" });
           }
@@ -80,7 +80,7 @@ hostrouter.get('/get_hosts/:id', async (req, res) => {
   try {
     const host = await Host.findById(req.params.id, { password: 0 }); // Exclude the password from the response
 
-    if (!host) {
+    if (!host) {  
       return res.status(404).json({ message: 'Host not found' });
     }
 

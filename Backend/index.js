@@ -1,4 +1,5 @@
 const express=require('express');
+const cors=require('cors')
 const { connection } = require('./config/db');
 const { hostrouter}=require("./routes/hostroute");
 const {propertyrouter}=require("./routes/propertyroute");
@@ -6,7 +7,7 @@ const {guestrouter}=require("./routes/guestroute");
 const {bookingrouter}=require("./routes/bookingroute")
 const app=express();
 require('dotenv').config()
-
+app.use(cors());
 app.use(express.json());
 
 app.get("/",(req,res)=>{

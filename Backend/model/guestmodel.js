@@ -5,7 +5,7 @@ const guestSchema =  mongoose.Schema({
     email:String,
     password: String,
     gender: String,
-    date_of_birth: Date,
+    date_of_birth: String,
     bio: String,
   });
   
