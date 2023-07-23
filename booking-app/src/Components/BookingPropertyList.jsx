@@ -19,7 +19,7 @@ const BookingPropertyList = () => {
 
   const fetchProperties = async () => {
     try {
-      const response = await axios.get("http://localhost:4500/property/");
+      const response = await axios.get("https://zany-plum-bonobo-shoe.cyclic.app/property/");
       console.log(response.data.msg);
       setProperties(response.data.msg);
     } catch (error) {
@@ -30,7 +30,7 @@ const BookingPropertyList = () => {
   const handleSort = async (option) => {
     try {
       const response = await axios.get(
-        `http://localhost:4500/property/sort?value=${option}`
+        `https://zany-plum-bonobo-shoe.cyclic.app/property/sort?value=${option}`
       );
       setProperties(response.data.msg);
     } catch (error) {
@@ -41,7 +41,7 @@ const BookingPropertyList = () => {
   const handleFilter = async (location) => {
     try {
       const response = await axios.get(
-        `http://localhost:4500/property/filter?value=${location}`
+        `https://zany-plum-bonobo-shoe.cyclic.app/property/filter?value=${location}`
       );
       setProperties(response.data.msg);
     } catch (error) {
@@ -52,7 +52,7 @@ const BookingPropertyList = () => {
   const handlePagination = async (page, limit = 10) => {
     try {
       const response = await axios.get(
-        `http://localhost:4500/property/pagination?page=${page}&limit=${limit}`
+        `https://zany-plum-bonobo-shoe.cyclic.app/property/pagination?page=${page}&limit=${limit}`
       );
       setProperties(response.data);
     } catch (error) {

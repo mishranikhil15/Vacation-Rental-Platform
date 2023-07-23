@@ -12,7 +12,7 @@ const PropertyList = () => {
     try {
       const token = JSON.parse(localStorage.getItem("token"));
       const response = await axios.get(
-        `http://localhost:4500/property/own_property/${userId}`,
+        `https://zany-plum-bonobo-shoe.cyclic.app/property/own_property/${userId}`,
         {
           headers: {
             Authorization: `${token}`,
@@ -31,7 +31,7 @@ const PropertyList = () => {
     try {
       // Replace the URL with your backend server endpoint for updating a property
       const response = await axios.put(
-        `http://localhost:4500/property/edit_property/${propertyId}`,
+        `https://zany-plum-bonobo-shoe.cyclic.app/property/edit_property/${propertyId}`,
         selectedProperty
       );
       console.log(response.data);
@@ -47,7 +47,7 @@ const PropertyList = () => {
       const token = JSON.parse(localStorage.getItem("token"));
       // Replace the URL with your backend server endpoint for updating a property
       const response = await axios.delete(
-        `http://localhost:4500/property/del_property/${propertyId}`,
+        `https://zany-plum-bonobo-shoe.cyclic.app/property/del_property/${propertyId}`,
         {
           headers: {
             Authorization: `${token}`,

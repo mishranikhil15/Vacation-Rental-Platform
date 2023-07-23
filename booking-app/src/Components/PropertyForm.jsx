@@ -29,7 +29,7 @@ const PropertyForm = () => {
     try {
       const token = JSON.parse(localStorage.getItem('token'));
       // Replace the URL with your backend server endpoint for creating/updating properties
-      const response = await axios.post('http://localhost:4500/property/properties', formData, {
+      const response = await axios.post('https://zany-plum-bonobo-shoe.cyclic.app/property/properties', formData, {
         headers: {
           Authorization: `${token}`,
         },

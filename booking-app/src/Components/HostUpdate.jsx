@@ -24,7 +24,7 @@ const HostUpdate = () => {
   const fetchHostData = async (hostId) => {
     try {
       const token = JSON.parse(localStorage.getItem('token'));
-      const response = await axios.get(`http://localhost:4500/host/get_hosts/${hostId}`, {
+      const response = await axios.get(`https://zany-plum-bonobo-shoe.cyclic.app/host/get_hosts/${hostId}`, {
         headers: {
           Authorization: `${token}`,
         },
@@ -48,7 +48,7 @@ const HostUpdate = () => {
     event.preventDefault();
     try {
       const token = JSON.parse(localStorage.getItem('token'));
-      let res = await axios.put(`http://localhost:4500/host/update_hosts/${hostId}`, hostData, {
+      let res = await axios.put(`https://zany-plum-bonobo-shoe.cyclic.app/host/update_hosts/${hostId}`, hostData, {
         headers: {
           Authorization: `${token}`,
         },
@@ -66,7 +66,7 @@ const HostUpdate = () => {
   const handleDel = async () => {
     try {
       const token = JSON.parse(localStorage.getItem('token'));
-      let res = await axios.delete(`http://localhost:4500/host/del_hosts/${hostId}`, {
+      let res = await axios.delete(`https://zany-plum-bonobo-shoe.cyclic.app/host/del_hosts/${hostId}`, {
         headers: {
           Authorization: `${token}`,
         },

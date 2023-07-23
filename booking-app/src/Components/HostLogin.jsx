@@ -16,7 +16,7 @@ const HostLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4500/host/login', formData);
+      const response = await axios.post('https://zany-plum-bonobo-shoe.cyclic.app/host/login', formData);
       console.log(response.data);
       alert(response.data.msg);
       localStorage.setItem("token",JSON.stringify(response.data.token))
