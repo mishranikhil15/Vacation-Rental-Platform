@@ -17,7 +17,7 @@ const GuestDetails = () => {
   const fetchGuestData = async (guestId) => {
     try {
       const token = JSON.parse(localStorage.getItem('token'));
-      const response = await axios.get(`http://localhost:4500/guest/get_guests/${guestId}`, {
+      const response = await axios.get(`https://zany-plum-bonobo-shoe.cyclic.app/guest/get_guests/${guestId}`, {
         headers: {
           Authorization: `${token}`,
         },
@@ -31,7 +31,7 @@ const GuestDetails = () => {
   const fetchGuestBookings = async (guestId) => {
     try {
       const token = JSON.parse(localStorage.getItem('token'));
-      const response = await axios.get(`http://localhost:4500/booking/bookings/guest/${guestId}`, {
+      const response = await axios.get(`https://zany-plum-bonobo-shoe.cyclic.app/booking/bookings/guest/${guestId}`, {
         headers: {
           Authorization: `${token}`,
         },

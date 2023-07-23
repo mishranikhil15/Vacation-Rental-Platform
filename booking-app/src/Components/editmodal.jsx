@@ -41,7 +41,7 @@ import {
         const token = JSON.parse(localStorage.getItem('token'));
         // Replace the URL with your backend server endpoint for updating a property
         const response = await axios.put(
-          `http://localhost:4500/property/edit_property/${id}`,
+          `https://zany-plum-bonobo-shoe.cyclic.app/property/edit_property/${id}`,
           formData,
           {
             headers: {

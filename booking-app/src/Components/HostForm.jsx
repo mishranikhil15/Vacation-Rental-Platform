@@ -25,7 +25,7 @@ const HostForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4500/host/register', formData);
+      const response = await axios.post('https://zany-plum-bonobo-shoe.cyclic.app/host/register', formData);
       console.log(response.data.msg); // Host registered Successfully
       alert(response.data.msg);
       // You can redirect or show a success message here.

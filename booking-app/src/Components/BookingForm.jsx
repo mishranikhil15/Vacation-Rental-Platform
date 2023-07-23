@@ -22,7 +22,7 @@ const BookingForm = () => {
     try {
       const token = JSON.parse(localStorage.getItem('token'));
       const response = await axios.post(
-        'http://localhost:4500/booking/bookings',
+        'https://zany-plum-bonobo-shoe.cyclic.app/booking/bookings',
         {
           property_id: property_id,
           guest_id: JSON.parse(localStorage.getItem('guestId')),
