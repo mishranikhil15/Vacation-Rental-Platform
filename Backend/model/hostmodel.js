@@ -8,7 +8,7 @@ const hostSchema =  mongoose.Schema({
     location: String,
     propertyType: String,
     about: String,
-    hostingSince: Number,
+    hostingSince: String,
   });
   
   const Host = mongoose.model('Host', hostSchema);

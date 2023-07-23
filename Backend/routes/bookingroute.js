@@ -13,6 +13,8 @@ bookingrouter.post('/bookings',authenticate, async (req, res) => {
     // Check if the property and guest exist in the database before creating the booking
     // You can implement this check here
 
+    
+
     const booking = new Booking({
       property_id,
       guest_id,
@@ -33,23 +35,23 @@ bookingrouter.post('/bookings',authenticate, async (req, res) => {
 bookingrouter.get('/bookings/guest/:guestId', async (req, res) => {
   try {
     const guest_id = req.params.guestId;
-    const bookings = await Booking.find({ guest_id });
+    const bookings = await Booking.find({ guest_id }).populate("property_id").populate("guest_id");
     res.json(bookings);
   } catch (error) {
     res.status(500).json({ error: 'Error fetching guest bookings' });
   }
 });
 
-// Route for getting all bookings for a specific property
-bookingrouter.get('/bookings/property/:propertyId', async (req, res) => {
-  try {
-    const property_id = req.params.propertyId;
-    const bookings = await Booking.find({ property_id });
-    res.json(bookings);
-  } catch (error) {
-    res.status(500).json({ error: 'Error fetching property bookings' });
-  }
-});
+// // Route for getting all bookings for a specific property
+// bookingrouter.get('/bookings/property/:propertyId', async (req, res) => {
+//   try {
+//     const property_id = req.params.propertyId;
+//     const bookings = await Booking.find({ property_id });
+//     res.json(bookings);
+//   } catch (error) {
+//     res.status(500).json({ error: 'Error fetching property bookings' });
+//   }
+// });
 
 
 
